@@ -1,0 +1,19 @@
+{
+  "name": "odin-project-restaurantpage",
+  "version": "1.0.0",
+  "description": "Sample page of a restaurant with menu and restaurant contact",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "author": "Rafael Daza",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
