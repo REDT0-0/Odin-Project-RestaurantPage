@@ -6,6 +6,7 @@ import fajitasImg from'./img/fajitas.jpg'
 import quesadillaImg from './img/quesadilla.jpg'
 import tacoImg from './img/taco.jpg'
 import salchipapasImg from './img/salchipapas.jpg'
+import principalImg from './img/iconFridas.png'
 
 const content = document.querySelector('.content');
 
@@ -103,23 +104,23 @@ const menu = () => {
       details: 'French fries (papas fritas), either homemade or store-bought, Sausages (salchichas), sliced or diced and fried, Salsa golf, a sauce made with ketchup and mayonnaise, or other sauces such as chimichurri, garlic aioli, or hot sauce, Optional toppings such as diced onions, tomatoes, or peppers, Salt and pepper',
     }
   };
-
+  
   const menuContainer = document.createElement('div');
-  menuContainer.classList.add('menu-container');
+  menuContainer.classList.add('menu')
 
   for (let plate in plates) {
     if (plates.hasOwnProperty(plate)) {
-      const foodItemDiv = document.createElement('div');
-      foodItemDiv.classList.add('food-items');
+      const foodItem = document.createElement('div');
+      foodItem.classList.add('food-items');
 
       const foodImg = document.createElement('img');
       foodImg.src = plates[plate].img;
 
-      const detailsDiv = document.createElement('div');
-      detailsDiv.classList.add('details');
+      const details = document.createElement('div');
+      details.classList.add('details');
 
-      const detailsSubDiv = document.createElement('div');
-      detailsSubDiv.classList.add('details-sub');
+      const detailsSub = document.createElement('div');
+      detailsSub.classList.add('details-sub');
 
       const foodName = document.createElement('h5');
       foodName.textContent = plate.replace(/-/g, ' ');
@@ -128,17 +129,18 @@ const menu = () => {
       foodPrice.classList.add('price');
       foodPrice.textContent = `$${plates[plate].price}`;
 
-      detailsSubDiv.appendChild(foodName);
-      detailsSubDiv.appendChild(foodPrice);
+      detailsSub.appendChild(foodName);
+      detailsSub.appendChild(foodPrice);
 
       const foodDetails = document.createElement('p');
       foodDetails.textContent = plates[plate].details.replace(/\n\s+/g, '\n');
 
-      detailsDiv.appendChild(foodImg);
-      detailsDiv.appendChild(detailsSubDiv);
-      detailsDiv.appendChild(foodDetails);
-
-      menuContainer.appendChild(detailsDiv);
+      details.appendChild(detailsSub);
+      details.appendChild(foodDetails);
+      
+      foodItem.appendChild(foodImg);
+      foodItem.appendChild(details);
+      menuContainer.appendChild(foodItem);
     }
   }
 
@@ -168,7 +170,7 @@ const contact = () => {
   contacList.appendChild(email);
 
   contacInfo.appendChild(contacList);
-
+  
   return contacInfo;
 }
 
@@ -203,6 +205,10 @@ const render = (e) => {
 }
 
 const main = document.createElement('main');
-content.appendChild(navBar())
-content.appendChild(main)
+const fridaIcon = document.createElement('img');
+fridaIcon.classList.add('initIcon');
+fridaIcon.src =  principalImg;
+main.appendChild(fridaIcon);
+content.appendChild(navBar());
+content.appendChild(main);
 
