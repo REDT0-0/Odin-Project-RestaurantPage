@@ -1,6 +1,7 @@
 import './style.css';
 import logoFrida from './img/FridaLogo.png'
 
+
 const content = document.querySelector('.content');
 
 const navBar = () => {
@@ -65,7 +66,46 @@ const home = () => {
 }
 
 const menu = () => {
-  
+  const plates = {
+    burger: {
+      price: '8',
+      details: 'Ground beef or other meat (such as turkey, chicken, or veggie patties), Salt and pepper, Buns, Lettuce, Tomato, Onion, Cheese, Ketchup, Mustard, Mayonnaise, Pickles',
+    },
+    chilaquiles: {
+      price: '8',
+      details: 'Corn tortillas Vegetable oil or cooking spray, Red or green salsa or sauce (made with tomatoes, tomatillos, chilies, and other seasonings), Onion, Garlic, Salt, Queso fresco or other cheese, Crema or sour cream, Avocado, Cilantro, Some variations of Chilaquiles may also include chicken, chorizo, or eggs as additional toppings. The exact ingredients used can be adjusted to taste, and there are many ways to customize the dish.',
+    },
+    fajitas: {
+      price: '6.5',
+      details: 'Meat (usually beef, chicken, or shrimp), Bell peppers (usually red, green, and/or yellow), Onion, Garlic, Lime juice, Olive oil, Chili powder, Cumin, Salt and pepper, Flour or corn tortillas, Toppings such as sour cream, guacamole, shredded cheese, and salsa.',
+    },
+    quesadilla: {
+      price: '12',
+      details: 'Flour or corn tortillas, Shredded cheese (such as cheddar, Monterrey Jack, or queso blanco), Optional fillings such as cooked chicken, steak, shrimp, beans, vegetables (such as peppers, onions, or mushrooms), or salsa',
+    },
+    taco: {
+      price: '9',
+      details: 'Corn or flour tortillas, Meat (such as beef, chicken, pork, or fish) or beans for a vegetarian option, Seasonings for the meat (such as cumin, chili powder, or garlic), Vegetables (such as lettuce, tomatoes, onions, or peppers), Cheese (such as queso fresco, cheddar, or Monterey Jack), Salsa or hot sauce, Sour cream or guacamole',
+    },
+    salchipapas: {
+      price: '10',
+      details: 'French fries (papas fritas), either homemade or store-bought, Sausages (salchichas), sliced or diced and fried, Salsa golf, a sauce made with ketchup and mayonnaise, or other sauces such as chimichurri, garlic aioli, or hot sauce, Optional toppings such as diced onions, tomatoes, or peppers, Salt and pepper',
+    }
+  };
+
+  const menuContainer = document.createElement('div');
+  menuContainer.classList.add('menu-container');
+  menuContainer.textContent="RAFA"; 
+
+  for (let plate in plates) {
+    if (plates.hasOwnProperty(plate)) {
+      console.log('Tipo de plato: ' + plate);
+      console.log('Precio: ' + plates[plate].price);
+      console.log('Detalles: ' + plates[plate].details);
+    }
+  }
+
+  return menuContainer;
 }
 
 const contact = () => {
